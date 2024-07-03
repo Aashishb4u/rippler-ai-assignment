@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="w-100 d-flex justify-content-end p-3 px-4">
+    <img src="assets/icons/person-cog.svg" alt="">
+  </div>
+</nav>
+
+
+<div class="lg:p-0 p-4 row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xxl-5">
+  <ng-container *ngFor="let product of products">
+    <div class="product-card-wrapper cursor-pointer mb-2 fade-in">
+      <div class="product-card rounded-3 p-2 mb-3 mb-md-4 bg-white">
+        <div class="position-relative pb-1 ">
+          <img loading="lazy" alt="Cropped Faux leather Jacket" class="w-100 object-fit-cover"
+               [src]="product.img">
+        </div>
+        <div class="d-flex flex-column gap-2 my-2 position-relative">
+          <div class="rrp-tag">
+            RRP {{product.rrp}}
+          </div>
+          <div class="product-name">
+            <span class="primary-color highlighted">{{product.highlighted}}</span> {{product.name}}
+          </div>
+          <div class="btm-text">
+            Size {{product.size}}
+          </div>
+          <div class="btm-text">
+            {{product.rental}} Rental
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
